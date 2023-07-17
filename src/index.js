@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ulListe = document.getElementById("rating");
   const liListe = ulListe.querySelectorAll("li");
   const bouton = document.querySelector("button");
+  const selectChoix = document.getElementById("selectedCount");
   let choix;
 
   liListe.forEach((LI, index) => {
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   bouton.addEventListener("click", () => {
+    selectChoix.textContent = (choix);
     let isAnimationRunning = false;
     let isAnimationforward = true;
 
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     isAnimationforward = !isAnimationforward;
   });
 
+ 
 
   function disableScroll() {
     document.body.style.overflow = "hidden";
