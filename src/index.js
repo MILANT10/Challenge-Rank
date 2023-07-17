@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ulListe = document.getElementById("rating");
   const liListe = ulListe.querySelectorAll("li");
   const bouton = document.querySelector("button");
+  const second = document.querySelector("#thank");
   const selectChoix = document.getElementById("selectedCount");
   let choix;
 
@@ -29,39 +30,63 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   bouton.addEventListener("click", () => {
-    selectChoix.textContent = (choix);
+    selectChoix.textContent = choix;
     let isAnimationRunning = false;
     let isAnimationforward = true;
-
+  
     if (isAnimationRunning) {
       return;
     }
-
+  
     isAnimationRunning = true;
-
-    const startPoint = isAnimationforward ? "0%" : "100%";
-    const endPoint = isAnimationforward ? "-170%" : "0%";
-
+  
+    let startPoint = isAnimationforward ? "0%" : "100%";
+    let endPoint = isAnimationforward ? "-170%" : "0%";
+  
     const moveAnimation = new KeyframeEffect(
       main,
       [
         { transform: `translateY(${startPoint})` },
         { transform: `translateY(${endPoint})` },
       ],
-      { duration: 3000, fill: "forwards" }
+      { duration: 2000, fill: "forwards" }
     );
-
+  
     const mainUp = new Animation(moveAnimation, document.timeline);
-
+  
     mainUp.onfinish = () => {
       isAnimationRunning = false;
     };
-
+  
     mainUp.play();
-
+  
     isAnimationforward = !isAnimationforward;
+  
+    let firstPoint = isAnimationforward ? "0%" : "0%"; 
+    let secondPoint = isAnimationforward ? "100%" : "-300%"; 
+  
+    const thankAnimation = new KeyframeEffect(
+      second,
+      [
+        { transform: `translateY(${firstPoint})` },
+        { transform: `translateY(${secondPoint})` },
+      ],
+      { duration: 2500, fill: "forwards" }
+    );
+  
+    const secondUp = new Animation(thankAnimation, document.timeline);
+  
+    secondUp.onfinish = () => {
+      isAnimationRunning = false;
+    };
+  
+    secondUp.play();
   });
+  
 
+
+
+  
  
 
   function disableScroll() {

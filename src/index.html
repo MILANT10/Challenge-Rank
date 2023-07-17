@@ -21,9 +21,9 @@
 
     <title>Frontend Mentor | Interactive rating component</title>
   </head>
-  <body class="bg-VeryDarkBlue min-h-screen flex justify-center items-center">
+  <body class="bg-VeryDarkBlue min-h-screen flex flex-col justify-center items-center">
     <div
-      class="container w-[500px] bg-darkBlue p-9 rounded-3xl flex flex-col gap-8">
+      class="container w-[500px] bg-darkBlue p-9 rounded-3xl flex flex-col gap-8 relative top-[200px]">
       <span
         class="bg-medium bg-opacity-20 w-12 h-12 rounded-full flex justify-center items-center"
         ><img class="w-5 h-5" src="../images/icon-star.svg" alt="star icon"
@@ -61,11 +61,11 @@
       </button>
     </div>
 
-    <div class="container w-[400px] bg-darkBlue p-6 rounded-3xl flex flex-col items-center justify-center gap-8">
+    <div id="thank" class="container w-[400px] bg-darkBlue p-8 rounded-3xl flex flex-col items-center justify-center gap-8 relative top-[1000px]">
       <img class="w-36" src="../images/illustration-thank-you.svg" alt="thank you image">
-      <span class="text-primary bg-medium rounded-full p-2 bg-opacity-20">You selected <span id="selectedCount"></span> out of 5</span>
+      <span class="text-primary bg-medium rounded-full p-2 bg-opacity-20 text-lg">You selected <span id="selectedCount"></span> out of 5</span>
       <h2 class="text-white text-3xl font-bold">Thank you!</h2>
-      <p class="text-medium text-center">We appreciate you taking the time to give a rating. If you ever need more support, 
+      <p class="text-medium text-center text-base">We appreciate you taking the time to give a rating. If you ever need more support, 
         don’t hesitate to get in touch!</p>
     </div>
     
