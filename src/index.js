@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", disableScroll);
 
-  const main = document.querySelector(".container");
+  const main = document.querySelector("#container");
   const ulListe = document.getElementById("rating");
   const liListe = ulListe.querySelectorAll("li");
   const bouton = document.querySelector("button");
