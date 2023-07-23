@@ -14,14 +14,13 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
       rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="./dist/main.css" />
-      <script src="index.js"></script>
+    <link rel="stylesheet" href="./dist/main.css" />
+    <script src="index.js"></script>
 
     <title>Frontend Mentor | Interactive rating component</title>
   </head>
-  <body class="bg-VeryDarkBlue min-h-screen flex flex-col justify-center items-center">
+  <body
+    class="bg-VeryDarkBlue min-h-screen flex flex-col justify-center items-center">
     <div
       class="container w-[500px] bg-darkBlue p-9 rounded-3xl flex flex-col gap-8 relative top-[200px]">
       <span
@@ -56,21 +55,30 @@
         </li>
       </ul>
 
-      <button class="bg-primary rounded-full text-white p-3 text-xl hover:bg-white hover:text-primary">
+      <button
+        class="bg-primary rounded-full text-white p-3 text-xl hover:bg-white hover:text-primary">
         <span>SUBMIT</span>
       </button>
     </div>
 
-    <div id="thank" class="container w-[400px] bg-darkBlue p-8 rounded-3xl flex flex-col items-center justify-center gap-8 relative top-[1000px]">
-      <img class="w-36" src="images/illustration-thank-you.svg" alt="thank you image">
-      <span class="text-primary bg-medium rounded-full p-2 bg-opacity-20 text-lg">You selected <span id="selectedCount"></span> out of 5</span>
+    <div
+      id="thank"
+      class="container w-[400px] bg-darkBlue p-8 rounded-3xl flex flex-col items-center justify-center gap-8 relative top-[1000px]">
+      <img
+        class="w-36"
+        src="images/illustration-thank-you.svg"
+        alt="thank you image" />
+      <span
+        class="text-primary bg-medium rounded-full p-2 bg-opacity-20 text-lg"
+        >You selected <span id="selectedCount"></span> out of 5</span
+      >
       <h2 class="text-white text-3xl font-bold">Thank you!</h2>
-      <p class="text-medium text-center text-base">We appreciate you taking the time to give a rating. If you ever need more support, 
-        don’t hesitate to get in touch!</p>
+      <p class="text-medium text-center text-base">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
     </div>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-
   </body>
 </html>
