@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+      --color-primary: 25deg 97% 53%;
+      --white : 0deg 0% 100%;
+      --lightGrey : 217deg 12% 63%;
+      --MediumGrey : 216deg 12% 54%;
+      --DarkBlue : 213deg 19% 18%;
+      --VeryDarkBlue : 216deg 12% 8%;
+    }
+
+    html{
+      font-family: 'Overpass', sans-serif;
+    }
+  }
+
+::-webkit-scrollbar{
+  display: none;
+}
