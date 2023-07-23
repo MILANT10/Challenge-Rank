@@ -29,62 +29,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  let tl = gsap.timeline({});
+
   bouton.addEventListener("click", () => {
-    selectChoix.textContent = choix;
-    let isAnimationRunning = false;
-    let isAnimationforward = true;
-  
-    if (isAnimationRunning) {
-      return;
-    }
-  
-    isAnimationRunning = true;
-  
-    let startPoint = isAnimationforward ? "0%" : "100%";
-    let endPoint = isAnimationforward ? "-170%" : "0%";
-  
-    const moveAnimation = new KeyframeEffect(
-      main,
-      [
-        { transform: `translateY(${startPoint})` },
-        { transform: `translateY(${endPoint})` },
-      ],
-      { duration: 2000, fill: "forwards" }
-    );
-  
-    const mainUp = new Animation(moveAnimation, document.timeline);
-  
-    mainUp.onfinish = () => {
-      isAnimationRunning = false;
-    };
-  
-    mainUp.play();
-  
-    isAnimationforward = !isAnimationforward;
-  
-    let firstPoint = isAnimationforward ? "0%" : "0%"; 
-    let secondPoint = isAnimationforward ? "100%" : "-300%"; 
-  
-    const thankAnimation = new KeyframeEffect(
-      second,
-      [
-        { transform: `translateY(${firstPoint})` },
-        { transform: `translateY(${secondPoint})` },
-      ],
-      { duration: 2500, fill: "forwards" }
-    );
-  
-    const secondUp = new Animation(thankAnimation, document.timeline);
-  
-    secondUp.onfinish = () => {
-      isAnimationRunning = false;
-    };
-  
-    secondUp.play();
+      selectChoix.textContent = choix;
+   
+    tl.to(main, {y: -750, duration:3});
+    tl.to(second, {y: -1250, duration:3}, 0.5);
+    
+
   });
   
 
+  second.addEventListener("click", () =>{
 
+    if(tl.reversed()){
+      tl.paly();
+    } else {
+      tl.reverse();
+    }
+  });
 
   
  
