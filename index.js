@@ -26,24 +26,31 @@ document.addEventListener("DOMContentLoaded", function () {
       LI.classList.remove("bg-opacity-20");
 
       choix = `${index + 1}`;
-      console.log(choix);
     });
-  });
 
-  let tl = gsap.timeline({});
+
+
+    let tl = gsap.timeline({});
 
   bouton.addEventListener("click", () => {
     selectChoix.textContent = choix;
 
     tl.to(main, { y: -750, duration: 3 });
     tl.to(second, { y: -1250, duration: 3 }, 0.5);
-    console.log("cela fontionne");
     tl.play();
   });
 
   second.addEventListener("click", () => {
     tl.reverse(0);
+    choix = null;
+    LI.classList.remove("bg-primary");
+          LI.classList.remove("bg-opacity-100");
+          LI.classList.remove("text-white");
+          LI.classList.add("bg-opacity-20");
   });
+  });
+
+  
 
   function disableScroll() {
     document.body.style.overflow = "hidden";
